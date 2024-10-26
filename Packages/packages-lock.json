@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.generic.eventbus": {
+      "version": "git@github.com:CankivancYigit/EventBus.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "fc274e8371b849d61ca7c1e42c59855ca0e3748d"
+    },
     "com.unity.cinemachine": {
       "version": "2.10.2",
       "depth": 0,
