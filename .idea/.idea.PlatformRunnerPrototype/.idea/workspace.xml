@@ -16,6 +16,7 @@
     <setting file="file://$PROJECT_DIR$/../HyperCasualTemplate/Assets/_GAME/Scripts/Runner/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../HyperCasualTemplate/Assets/_GAME/Scripts/Runner/PlayerCollisionHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../HyperCasualTemplate/Assets/_GAME/Scripts/Runner/TransformHorizontalTilter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.generic.finitestatemachine@df1798d75d/Runtime/StateMachine.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3

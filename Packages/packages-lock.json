@@ -7,6 +7,13 @@
       "dependencies": {},
       "hash": "fc274e8371b849d61ca7c1e42c59855ca0e3748d"
     },
+    "com.generic.finitestatemachine": {
+      "version": "git@github.com:CankivancYigit/FiniteStateMachine.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "df1798d75dcb448d31155826cb53cc40e550e114"
+    },
     "com.unity.cinemachine": {
       "version": "2.10.2",
       "depth": 0,
