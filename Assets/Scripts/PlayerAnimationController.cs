@@ -8,6 +8,21 @@ public class PlayerAnimationController : MonoBehaviour
 	[SerializeField] private Animator animator;
 	private static readonly int IsRunning = Animator.StringToHash("isRunning");
 
+	private void OnEnable()
+	{
+		EventBus<LevelStartEvent>.AddListener(TransitionToRunning);
+	}
+
+	private void OnDisable()
+	{
+		EventBus<LevelStartEvent>.RemoveListener(TransitionToRunning);
+	}
+
+	private void TransitionToRunning(object sender, LevelStartEvent e)
+	{
+		TransitionToRunningAnimation();
+	}
+	
 	public void TransitionToRunningAnimation()
 	{
 		animator.SetBool(IsRunning,true);

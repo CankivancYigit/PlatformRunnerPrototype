@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PreGameState : State
 {
@@ -11,7 +7,10 @@ public class PreGameState : State
     
     public override void EnterState()
     {
-        
+        if (!enabled)
+        {
+            enabled = true;
+        }
     }
 
     private void Update()

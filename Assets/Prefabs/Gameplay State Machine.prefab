@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateMachine: {fileID: 7406636331202990969}
+  runningState: {fileID: 7406636331202990975}
 --- !u!114 &7406636331202990975
 MonoBehaviour:
   m_ObjectHideFlags: 0
