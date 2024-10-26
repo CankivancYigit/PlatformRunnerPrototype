@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlayerAnimationController : MonoBehaviour
 {
 	[SerializeField] private Animator animator;
-	private static readonly int IsRunning = Animator.StringToHash("isRunning");
 
 	private void OnEnable()
 	{
@@ -20,16 +16,14 @@ public class PlayerAnimationController : MonoBehaviour
 
 	private void TransitionToRunning(object sender, LevelStartEvent e)
 	{
-		TransitionToRunningAnimation();
+		SetBoolParameter("isRunning",true);
 	}
 	
-	public void TransitionToRunningAnimation()
+	private void SetBoolParameter(string boolName, bool value)
 	{
-		animator.SetBool(IsRunning,true);
-	}
-	
-	public void TransitionToIdleAnimation()
-	{
-		animator.SetBool(IsRunning,false);
+		if (animator != null)
+		{
+			animator.SetBool(boolName, value);
+		}
 	}
 }
