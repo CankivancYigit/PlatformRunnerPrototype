@@ -147,8 +147,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8980270400253499179, guid: 0efd2f765276e8a47836a98c895bd6d5, type: 3}
-  - {fileID: 9171952328373019990, guid: 0efd2f765276e8a47836a98c895bd6d5, type: 3}
+  - {fileID: 2100000, guid: 53320e1cb6965ca4ca2149c8c89e7e35, type: 2}
+  - {fileID: 2100000, guid: 53320e1cb6965ca4ca2149c8c89e7e35, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -798,6 +798,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6490753064988446285}
+  - component: {fileID: 3370995142508808443}
   m_Layer: 0
   m_Name: Opponent
   m_TagString: Untagged
@@ -823,6 +824,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &3370995142508808443
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5861462580817188087}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2bdd8db815c65844cbb653003166d15c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7520603485144345979
 GameObject:
   m_ObjectHideFlags: 0
