@@ -11,6 +11,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../HyperCasualTemplate/Assets/_GAME/Scripts/Runner/ConveyorBelt.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../HyperCasualTemplate/Assets/_GAME/Scripts/Runner/GateSealer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../HyperCasualTemplate/Assets/_GAME/Scripts/Runner/MoveForward.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../HyperCasualTemplate/Assets/_GAME/Scripts/Runner/Obstacle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../HyperCasualTemplate/Assets/_GAME/Scripts/Runner/Player.cs" root0="SKIP_HIGHLIGHTING" />

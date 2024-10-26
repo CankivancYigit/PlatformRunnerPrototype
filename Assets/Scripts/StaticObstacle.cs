@@ -13,7 +13,6 @@ public class StaticObstacle : MonoBehaviour, ICollideable
         objectScale = transform.localScale;
     }
     
-    
     public void OnCollide()
     {
         PunchAnim();
