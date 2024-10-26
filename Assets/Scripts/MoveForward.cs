@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveForward : MonoBehaviour
@@ -12,9 +10,23 @@ public class MoveForward : MonoBehaviour
         _currentSpeed = 0;
     }
     
+    private void OnEnable()
+    {
+        EventBus<LevelStartEvent>.AddListener(OnLevelStart);
+    }
+
+    private void OnDisable()
+    {
+        EventBus<LevelStartEvent>.RemoveListener(OnLevelStart);
+    }
+
+    private void OnLevelStart(object sender, LevelStartEvent e)
+    {
+        _currentSpeed = moveSpeed;
+    }
+    
     void Update()
     {
-        // Move the character forward in its current direction
-        transform.Translate(Vector3.forward * (moveSpeed * Time.deltaTime));
+        transform.Translate(Vector3.forward * (_currentSpeed * Time.deltaTime));
     }
 }
