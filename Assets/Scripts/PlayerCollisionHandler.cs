@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class PlayerCollisionHandler : MonoBehaviour
         if (other.TryGetComponent<ICollideable>(out ICollideable collideable))
         {
             collideable.OnCollide();
+            EventBus<PlayerCollidedEvent>.Emit(this,new PlayerCollidedEvent());
         }
     }
 }
