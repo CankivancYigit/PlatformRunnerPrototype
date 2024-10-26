@@ -18,6 +18,7 @@
     <setting file="file://$PROJECT_DIR$/../HyperCasualTemplate/Assets/_GAME/Scripts/Runner/States.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../HyperCasualTemplate/Assets/_GAME/Scripts/Runner/TransformHorizontalTilter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Events/LevelStartEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.generic.finitestatemachine@df1798d75d/Runtime/State.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.generic.finitestatemachine@df1798d75d/Runtime/StateMachine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../State Machine/Assets/Scripts/StateManager.cs" root0="SKIP_HIGHLIGHTING" />
