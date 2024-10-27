@@ -7,9 +7,9 @@ public class HalfDonut : MonoBehaviour
     public float timeInterval = 2f;
 
     private Vector3 _startPosition;
-    private float _timeElapsed = 0f;
-    private bool _isMovingToEnd = false;
-    private bool _isMoving = false;
+    private float _timeElapsed;
+    private bool _isMovingToEnd;
+    private bool _isMoving;
 
     void Start()
     {

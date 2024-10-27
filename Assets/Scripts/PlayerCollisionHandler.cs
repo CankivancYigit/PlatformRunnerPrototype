@@ -1,20 +1,22 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class PlayerCollisionHandler : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<ICollectible>(out ICollectible collectible))
+        if (other.TryGetComponent(out ICollectible collectible))
         {
             collectible.OnCollected();
         }
 
-        if (other.TryGetComponent<ICollideable>(out ICollideable collideable))
+        if (other.TryGetComponent(out ICollideable collideable))
         {
             collideable.OnCollide();
+            KnockBack();
             EventBus<PlayerCollidedEvent>.Emit(this,new PlayerCollidedEvent());
         }
     }
@@ -32,5 +34,10 @@ public class PlayerCollisionHandler : MonoBehaviour
                 transform.Translate(Vector3.left * rotatingPlatform.rotationSpeed/10 * Time.deltaTime);
             }
         }
+    }
+    
+    private void KnockBack()
+    {
+        transform.DOMoveZ(transform.position.z - 4, .5f).SetEase(Ease.OutQuad);
     }
 }
