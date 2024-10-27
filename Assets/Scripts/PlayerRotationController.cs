@@ -12,6 +12,21 @@ public class PlayerRotationController : MonoBehaviour
     private bool isDragging;      
     private Coroutine resetRotationCoroutine;  
 
+    private void OnEnable()
+    {
+        EventBus<PlayerReachedFinishEvent>.AddListener(OnPlayerReachedFinish);
+    }
+
+    private void OnDisable()
+    {
+        EventBus<PlayerReachedFinishEvent>.RemoveListener(OnPlayerReachedFinish);
+    }
+
+    private void OnPlayerReachedFinish(object sender, PlayerReachedFinishEvent @event)
+    {
+        enabled = false;
+    }
+    
     void Update()
     {
         if (Input.GetMouseButtonDown(0))

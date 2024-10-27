@@ -19,6 +19,11 @@ public class PlayerCollisionHandler : MonoBehaviour
             KnockBack();
             EventBus<PlayerCollidedEvent>.Emit(this,new PlayerCollidedEvent());
         }
+        
+        if (other.TryGetComponent(out IInteractable interactable))
+        {
+            interactable.OnInteraction();
+        }
     }
 
     private void OnTriggerStay(Collider other)

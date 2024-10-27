@@ -13,6 +13,21 @@ public class PlayerController : MonoBehaviour
     private Vector3 lastPlayerPosition;   
     private float lastMousePosX;
     
+    private void OnEnable()
+    {
+        EventBus<PlayerReachedFinishEvent>.AddListener(OnPlayerReachedFinish);
+    }
+
+    private void OnDisable()
+    {
+        EventBus<PlayerReachedFinishEvent>.RemoveListener(OnPlayerReachedFinish);
+    }
+
+    private void OnPlayerReachedFinish(object sender, PlayerReachedFinishEvent @event)
+    {
+        enabled = false;
+    }
+
     void Start()
     {
         lastPlayerPosition = transform.position;

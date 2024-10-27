@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class StaticObstacle : MonoBehaviour, ICollideable
 {
-    Tween punchTween;
-    private Vector3 objectScale;
+    private Tween _punchTween;
+    private Vector3 _objectScale;
 
     private void Awake()
     {
-        objectScale = transform.localScale;
+        _objectScale = transform.localScale;
     }
     
     public void OnCollide()
@@ -20,11 +20,11 @@ public class StaticObstacle : MonoBehaviour, ICollideable
     
     private void PunchAnim()
     {
-        if (punchTween != null)
+        if (_punchTween != null)
         {
-            punchTween.Kill(true);
+            _punchTween.Kill(true);
         }
 
-        punchTween = transform.DOPunchScale(objectScale * 0.2f, 0.1f, 7, 0.4f);
+        _punchTween = transform.DOPunchScale(_objectScale * 0.2f, 0.1f, 7, 0.4f);
     }
 }
