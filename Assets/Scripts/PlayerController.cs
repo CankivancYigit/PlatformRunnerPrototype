@@ -9,9 +9,9 @@ public class PlayerController : MonoBehaviour
     public float horizontalLeftLimit = -3f;  
     public float horizontalRightLimit = 3f;
     
-    private bool isDragging = false;  
-    private Vector3 lastPlayerPosition;   
-    private float lastMousePosX;
+    private bool _isDragging;  
+    private Vector3 _lastPlayerPosition;   
+    private float _lastMousePosX;
     
     private void OnEnable()
     {
@@ -30,26 +30,26 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        lastPlayerPosition = transform.position;
+        _lastPlayerPosition = transform.position;
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            isDragging = true; 
-            lastMousePosX = Input.mousePosition.x;
+            _isDragging = true; 
+            _lastMousePosX = Input.mousePosition.x;
         }
 
-        if (Input.GetMouseButton(0) && isDragging)
+        if (Input.GetMouseButton(0) && _isDragging)
         {
             
             float currentMousePosX = Input.mousePosition.x;
-            float mouseDeltaX = currentMousePosX - lastMousePosX;
+            float mouseDeltaX = currentMousePosX - _lastMousePosX;
 
             // X eksenindeki hareketi hesaplayıp karakterin pozisyonuna uyguluyoruz
             float moveX = mouseDeltaX / Screen.width * (horizontalRightLimit - horizontalLeftLimit);
-            Vector3 targetPosition = new Vector3(lastPlayerPosition.x + moveX, transform.position.y, transform.position.z);
+            Vector3 targetPosition = new Vector3(_lastPlayerPosition.x + moveX, transform.position.y, transform.position.z);
             
             targetPosition.x = Mathf.Clamp(targetPosition.x, horizontalLeftLimit, horizontalRightLimit);
             
@@ -58,8 +58,8 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            isDragging = false;
-            lastPlayerPosition = transform.position;
+            _isDragging = false;
+            _lastPlayerPosition = transform.position;
         }
     }
 }
