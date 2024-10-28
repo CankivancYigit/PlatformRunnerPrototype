@@ -25,6 +25,6 @@ public class StaticObstacle : MonoBehaviour, ICollideable
             _punchTween.Kill(true);
         }
 
-        _punchTween = transform.DOPunchScale(_objectScale * 0.2f, 0.1f, 7, 0.4f);
+        _punchTween = transform.DOPunchScale(_objectScale * 0.3f, 0.1f, 7, 0.4f);
     }
 }

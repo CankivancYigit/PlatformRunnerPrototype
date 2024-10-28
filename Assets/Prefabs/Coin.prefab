@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinSpritePrefab: {fileID: 9148491239952291030, guid: 55a36e283c7a8de4f8eb256e68163c32, type: 3}
 --- !u!95 &2078766369998500090
 Animator:
   serializedVersion: 5

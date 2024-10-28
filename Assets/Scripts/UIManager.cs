@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class UIManager : SingletonBase<UIManager>
 {
+    public Canvas canvas;
     [SerializeField] private List<GameObject> panels;
     private GameObject _currentPanel;
 
