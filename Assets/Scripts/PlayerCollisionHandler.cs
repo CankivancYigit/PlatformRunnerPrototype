@@ -43,6 +43,9 @@ public class PlayerCollisionHandler : MonoBehaviour
     
     private void KnockBack()
     {
-        transform.DOMoveZ(transform.position.z - 4, .5f).SetEase(Ease.OutQuad);
+        transform.DOMoveZ(transform.position.z - 4, .5f).SetEase(Ease.OutQuad).OnComplete(delegate
+        {
+            EventBus<PlayerKnockBackHappenedEvent>.Emit(this,new PlayerKnockBackHappenedEvent());
+        });
     }
 }
