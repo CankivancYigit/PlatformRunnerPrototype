@@ -9,6 +9,7 @@ public class ShiningObstacle : MonoBehaviour , ICollideable
     public float rotationSpeed = 50f;
     public float horizontalMoveSpeed = 2f;
     public float horizontalMoveRange = 5f;
+    public bool isMovingRight;
     private float _initialX;
     private Vector3 _objectScale;
 
@@ -26,13 +27,22 @@ public class ShiningObstacle : MonoBehaviour , ICollideable
     {
         transform.Rotate(Vector3.up * (rotationSpeed * Time.deltaTime));
 
-        float newX = Mathf.PingPong(Time.time * horizontalMoveSpeed, horizontalMoveRange) + (_initialX - horizontalMoveRange / 2);
-        transform.position = new Vector3(newX, transform.position.y, transform.position.z);
+        float offsetX = Mathf.PingPong(Time.time * horizontalMoveSpeed, horizontalMoveRange);
+        
+        if (isMovingRight)
+        {
+            transform.position = new Vector3(_initialX + offsetX, transform.position.y, transform.position.z);
+        }
+        else
+        {
+            transform.position = new Vector3(_initialX - offsetX, transform.position.y, transform.position.z);
+        }
+        
     }
     
     public void OnCollide()
     {
-        ChangeParticleColor(Random.ColorHSV());
+        ChangeParticleColor(Random.ColorHSV(0f, 1f, 1f, 1f, 1f, 1f));
         PunchAnim();
     }
     
@@ -49,6 +59,6 @@ public class ShiningObstacle : MonoBehaviour , ICollideable
             _punchTween.Kill(true);
         }
 
-        _punchTween = transform.DOPunchScale(_objectScale * 0.2f, 0.1f, 7, 0.4f);
+        _punchTween = transform.DOPunchScale(_objectScale * 0.3f, 0.1f, 7, 0.4f);
     }
 }

@@ -8,28 +8,14 @@ public class PlayerAnimationController : MonoBehaviour
 	{
 		EventBus<LevelStartEvent>.AddListener(TransitionToRunning);
 		EventBus<PlayerReachedWallPaintingPosEvent>.AddListener(OnPlayerReachedWallPaintingPos);
-		// EventBus<PlayerKnockBackHappenedEvent>.AddListener(OnPlayerKnockBackHappened);
-		// EventBus<PlayerPositionResetEvent>.AddListener(OnPlayerPositionReset);
 	}
 
 	private void OnDisable()
 	{
 		EventBus<LevelStartEvent>.RemoveListener(TransitionToRunning);
 		EventBus<PlayerReachedWallPaintingPosEvent>.RemoveListener(OnPlayerReachedWallPaintingPos);
-		// EventBus<PlayerKnockBackHappenedEvent>.RemoveListener(OnPlayerKnockBackHappened);
-		// EventBus<PlayerPositionResetEvent>.RemoveListener(OnPlayerPositionReset);
 	}
-
-	// private void OnPlayerPositionReset(object sender, PlayerPositionResetEvent @event)
-	// {
-	// 	SetBoolParameter("isRunning",true);
-	// }
-	//
-	// private void OnPlayerKnockBackHappened(object sender, PlayerKnockBackHappenedEvent @event)
-	// {
-	// 	SetBoolParameter("isRunning",false);
-	// }
-
+	
 	private void OnPlayerReachedWallPaintingPos(object sender, PlayerReachedWallPaintingPosEvent @event)
 	{
 		SetBoolParameter("isRunning",false);

@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 50
   horizontalMoveSpeed: 2
-  horizontalMoveRange: 5
+  horizontalMoveRange: 14
   obstacleParticle: {fileID: 8832875888476633056}
 --- !u!1001 &8659030840245936778
 PrefabInstance:
