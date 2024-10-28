@@ -15,6 +15,7 @@ public class PlayerMoveForward : SingletonBase<PlayerMoveForward>
         EventBus<LevelStartEvent>.AddListener(OnLevelStart);
         EventBus<PlayerCollidedEvent>.AddListener(OnPlayerCollide);
         EventBus<PlayerReachedWallPaintingPosEvent>.AddListener(OnPlayerReachedWallPaintingPos);
+        EventBus<PlayerPositionResetEvent>.AddListener(OnPlayerPositionReset);
     }
 
     private void OnDisable()
@@ -22,6 +23,12 @@ public class PlayerMoveForward : SingletonBase<PlayerMoveForward>
         EventBus<LevelStartEvent>.RemoveListener(OnLevelStart);
         EventBus<PlayerCollidedEvent>.RemoveListener(OnPlayerCollide);
         EventBus<PlayerReachedWallPaintingPosEvent>.RemoveListener(OnPlayerReachedWallPaintingPos);
+        EventBus<PlayerPositionResetEvent>.RemoveListener(OnPlayerPositionReset);
+    }
+
+    private void OnPlayerPositionReset(object sender, PlayerPositionResetEvent @event)
+    {
+        _currentSpeed = moveSpeed;
     }
 
     private void OnPlayerReachedWallPaintingPos(object sender, PlayerReachedWallPaintingPosEvent @event)
