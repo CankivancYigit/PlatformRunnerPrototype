@@ -172,13 +172,12 @@ GameObject:
   - component: {fileID: 3276618087821370753}
   - component: {fileID: 8379307466270742330}
   - component: {fileID: 7401540796662005003}
-  - component: {fileID: 6519618953212246729}
-  - component: {fileID: 3190192931339547000}
   - component: {fileID: 8596108280725080772}
   - component: {fileID: 819808648515085991}
   - component: {fileID: 1976900707644971489}
   - component: {fileID: 6604290837553102470}
   - component: {fileID: 3487166282895885487}
+  - component: {fileID: 1501696643}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -229,36 +228,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
---- !u!114 &6519618953212246729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2752599215208546107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f3102e8b61c68c4581e299391d64288, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontalMoveSpeed: 10
-  horizontalLeftLimit: -5
-  horizontalRightLimit: 5
---- !u!114 &3190192931339547000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2752599215208546107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2dd94d9025d9134d9440e8bb1d535ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRotationAngle: 30
-  resetSpeed: 2
-  delayBeforeReset: 1
 --- !u!114 &8596108280725080772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +304,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1501696643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2752599215208546107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883d5d71bf96ebc46a1cecfa3af7492c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalSpeed: 10
+  joystick: {fileID: 0}
 --- !u!1 &2874964886172435651
 GameObject:
   m_ObjectHideFlags: 0

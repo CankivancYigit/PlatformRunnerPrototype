@@ -1,14 +1,37 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> panels;
-    private GameObject currentPanel;
+    private GameObject _currentPanel;
 
     private void Start()
     {
         OpenPanel(panels[0].name);
+    }
+
+    private void OnEnable()
+    {
+        EventBus<LevelStartEvent>.AddListener(OnLevelStart);
+        EventBus<PlayerReachedWallPaintingPosEvent>.AddListener(OnPlayerReachedWallPaintingPos);
+    }
+
+    private void OnDisable()
+    {
+        EventBus<LevelStartEvent>.RemoveListener(OnLevelStart);
+        EventBus<PlayerReachedWallPaintingPosEvent>.RemoveListener(OnPlayerReachedWallPaintingPos);
+    }
+
+    private void OnPlayerReachedWallPaintingPos(object sender, PlayerReachedWallPaintingPosEvent @event)
+    {
+        OpenPanel("Wall Painting Panel");
+    }
+
+    private void OnLevelStart(object sender, LevelStartEvent @event)
+    {
+        OpenPanel("Gameplay Panel");
     }
 
     public void OpenPanel(string panelName)
@@ -30,13 +53,13 @@ public class UIManager : MonoBehaviour
             return;
         }
 
-        if (currentPanel != null)
+        if (_currentPanel != null)
         {
-            currentPanel.SetActive(false);
+            _currentPanel.SetActive(false);
         }
 
-        currentPanel = panelToOpen;
-        currentPanel.SetActive(true);
+        _currentPanel = panelToOpen;
+        _currentPanel.SetActive(true);
     }
 }
 

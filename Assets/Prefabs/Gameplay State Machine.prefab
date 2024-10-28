@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateMachine: {fileID: 7406636331202990969}
+  wallPaintingState: {fileID: 7406636331202990972}
 --- !u!114 &7406636331202990972
 MonoBehaviour:
   m_ObjectHideFlags: 0
