@@ -27,7 +27,7 @@ public class UIManager : SingletonBase<UIManager>
 
     private void OnPlayerReachedWallPaintingPos(object sender, PlayerReachedWallPaintingPosEvent @event)
     {
-        OpenPanel("Wall Painting Panel");
+        OpenPanel("Wall Paint Panel");
     }
 
     private void OnLevelStart(object sender, LevelStartEvent @event)
