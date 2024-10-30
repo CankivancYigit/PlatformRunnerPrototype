@@ -4,6 +4,7 @@ using UnityEngine.AI;
 
 public class Opponent : MonoBehaviour
 {
+	public float runningSpeed = 6f;
 	public Transform finishLine;
 	public float respawnDelay = 2f;
 	private Vector3 startPosition;
@@ -12,6 +13,7 @@ public class Opponent : MonoBehaviour
 	void Start()
 	{
 		agent = GetComponent<NavMeshAgent>();
+		agent.speed = 0;
 		startPosition = transform.position;
         
 		if (finishLine != null)
@@ -20,11 +22,26 @@ public class Opponent : MonoBehaviour
 		}
 	}
 
+	private void OnEnable()
+	{
+		EventBus<LevelStartEvent>.AddListener(OnLevelStart);
+	}
+
+	private void OnDisable()
+	{
+		EventBus<LevelStartEvent>.RemoveListener(OnLevelStart);
+	}
+
+	private void OnLevelStart(object sender, LevelStartEvent @event)
+	{
+		agent.speed = runningSpeed;
+	}
+
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.TryGetComponent<ICollideable>(out var collideable))
 		{
-			Invoke(nameof(Respawn), respawnDelay);
+			Invoke(nameof(Respawn),0);
 		}
 	}
 

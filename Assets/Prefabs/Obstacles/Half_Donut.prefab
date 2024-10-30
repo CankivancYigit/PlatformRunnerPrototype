@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 4846266740683373205}
   - component: {fileID: 6523837195793513726}
   - component: {fileID: 1319029111763873607}
+  - component: {fileID: 4907260402099160128}
   m_Layer: 0
   m_Name: Half_Donut_Stick
   m_TagString: Untagged
@@ -420,6 +421,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!208 &4907260402099160128
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7675647071308253306}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.548, y: 0.5, z: 0.15}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 2.548, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &8685937777139625124
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +448,7 @@ GameObject:
   - component: {fileID: 4741714909117092483}
   - component: {fileID: 3322579104213319203}
   - component: {fileID: 458467686089709561}
+  - component: {fileID: 3276451037400509673}
   m_Layer: 0
   m_Name: Half_Donut_01
   m_TagString: Untagged
@@ -503,3 +521,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!208 &3276451037400509673
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8685937777139625124}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.4460001, y: 0.5, z: 2.25}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: -1.2290001, y: 0, z: 0}
+  m_TimeToStationary: 0.5
