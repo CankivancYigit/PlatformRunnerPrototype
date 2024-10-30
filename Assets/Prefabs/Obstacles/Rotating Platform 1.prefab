@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8628214362380892479}
   - component: {fileID: 5789769255972113909}
   - component: {fileID: -7522292088163933704}
+  - component: {fileID: 6986778044170870663}
   m_Layer: 0
   m_Name: Rotating Platform 1
   m_TagString: Untagged
@@ -26,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5429537978636413984}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.3, y: 6.2, z: 87.01}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 3, y: 3, z: 3.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,3 +99,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 50
   isRotatingTowardsRight: 1
+--- !u!65 &6986778044170870663
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5429537978636413984}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 18.41, y: 16.56, z: 7.503292}
+  m_Center: {x: 0.00000023841858, y: -0.00000023841858, z: -0.00000011920929}
