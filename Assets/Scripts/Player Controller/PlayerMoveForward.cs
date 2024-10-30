@@ -4,9 +4,11 @@ public class PlayerMoveForward : SingletonBase<PlayerMoveForward>
 {
     public float moveSpeed = 5.0f;
     private float _currentSpeed;
+    private Rigidbody _rigidbody;
 
     private void Start()
     {
+        _rigidbody = GetComponent<Rigidbody>();
         _currentSpeed = 0;
     }
     
@@ -48,6 +50,6 @@ public class PlayerMoveForward : SingletonBase<PlayerMoveForward>
     
     void Update()
     {
-        transform.Translate(Vector3.forward * (_currentSpeed * Time.deltaTime));
+        _rigidbody.velocity = Vector3.forward * _currentSpeed;
     }
 }

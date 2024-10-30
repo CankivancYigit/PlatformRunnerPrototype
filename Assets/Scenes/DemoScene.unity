@@ -967,6 +967,10 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1817444527}
+    - target: {fileID: 1501696643, guid: 5d9102103f0b94e4195c16764dc55ae0, type: 3}
+      propertyPath: horizontalSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2752599215208546107, guid: 5d9102103f0b94e4195c16764dc55ae0, type: 3}
       propertyPath: m_Name
       value: Player
