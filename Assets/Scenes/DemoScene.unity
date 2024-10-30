@@ -396,18 +396,6 @@ PrefabInstance:
       propertyPath: finishLine
       value: 
       objectReference: {fileID: 608060551}
-    - target: {fileID: 1779432965, guid: 5e5c3f1edaf69e64bacd9c62b0d8ca52, type: 3}
-      propertyPath: avoidAmount
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 1779432965, guid: 5e5c3f1edaf69e64bacd9c62b0d8ca52, type: 3}
-      propertyPath: avoidDistance
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1779432968, guid: 5e5c3f1edaf69e64bacd9c62b0d8ca52, type: 3}
-      propertyPath: m_Radius
-      value: 0.42
-      objectReference: {fileID: 0}
     - target: {fileID: 5861462580817188087, guid: 5e5c3f1edaf69e64bacd9c62b0d8ca52, type: 3}
       propertyPath: m_Name
       value: Opponent
@@ -1952,51 +1940,6 @@ PrefabInstance:
       objectReference: {fileID: 566918332}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27582aa75cdc79e47882758815e83a8a, type: 3}
---- !u!1 &838725599 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5861462580817188087, guid: 5e5c3f1edaf69e64bacd9c62b0d8ca52, type: 3}
-  m_PrefabInstance: {fileID: 239698679}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &838725603 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3370995142508808443, guid: 5e5c3f1edaf69e64bacd9c62b0d8ca52, type: 3}
-  m_PrefabInstance: {fileID: 239698679}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &838725605
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 838725599}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 1
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &838725606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 838725599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13f6532d231bfd449b25a1b193de06f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 838725603}
 --- !u!4 &848601461 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1668507443854459296, guid: 27582aa75cdc79e47882758815e83a8a, type: 3}
