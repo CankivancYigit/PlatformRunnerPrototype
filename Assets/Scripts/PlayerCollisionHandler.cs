@@ -6,6 +6,13 @@ using UnityEngine;
 
 public class PlayerCollisionHandler : MonoBehaviour
 {
+    private Rigidbody _rigidbody;
+
+    private void Start()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out ICollectible collectible))
@@ -32,11 +39,11 @@ public class PlayerCollisionHandler : MonoBehaviour
         {
             if (rotatingPlatform.isRotatingTowardsRight)
             {
-                transform.Translate(Vector3.right * rotatingPlatform.rotationSpeed/10 * Time.deltaTime);
+                _rigidbody.AddForce(Vector3.right * (rotatingPlatform.rotationSpeed / 10) * Time.fixedTime);
             }
             else
             {
-                transform.Translate(Vector3.left * rotatingPlatform.rotationSpeed/10 * Time.deltaTime);
+                _rigidbody.AddForce(Vector3.left * (rotatingPlatform.rotationSpeed / 10) * Time.fixedTime);
             }
         }
     }
