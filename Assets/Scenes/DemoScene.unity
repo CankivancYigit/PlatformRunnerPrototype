@@ -199,11 +199,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1668507443854459296, guid: 27582aa75cdc79e47882758815e83a8a, type: 3}
   m_PrefabInstance: {fileID: 61997110}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &74975290 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2008931634504615952, guid: 18b4007e6fe8a9745a5b1b3f9a7ddb35, type: 3}
-  m_PrefabInstance: {fileID: 7704808733386369971}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &80293939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -312,7 +307,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1352502646}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &161358007
 PrefabInstance:
@@ -2764,63 +2759,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1668507443854459296, guid: 27582aa75cdc79e47882758815e83a8a, type: 3}
   m_PrefabInstance: {fileID: 876171340}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &876837180
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 876837182}
-  - component: {fileID: 876837181}
-  m_Layer: 0
-  m_Name: WallPaintManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &876837181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 876837180}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be44ebc44b2bff14bb304a8d2c012926, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 963194227}
-  wallObject: {fileID: 74975290}
-  paintColor: {r: 1, g: 0, b: 0, a: 1}
-  color1: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  color2: {r: 1, g: 0, b: 0, a: 1}
-  color3: {r: 0, g: 0, b: 1, a: 1}
-  brushSize: 0.01
-  maxBrushSize: 0.1
-  colorButton1: {fileID: 492698044}
-  colorButton2: {fileID: 369480448}
-  colorButton3: {fileID: 1107464673}
-  brushSizeSlider: {fileID: 1849173730}
-  percentageText: {fileID: 1882615707}
---- !u!4 &876837182
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 876837180}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.88136446, y: -0.56984127, z: -206.07774}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1352502646}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &884722400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5002,7 +4940,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 876837182}
   - {fileID: 1852932816}
   - {fileID: 1810303811}
   - {fileID: 98862468}
@@ -6282,7 +6219,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1352502646}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1810953174
 PrefabInstance:
@@ -6473,7 +6410,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cwPaintSphere: {fileID: 901558265}
-  cwChannelCounterText: {fileID: 0}
   color1: {r: 1, g: 0.8942379, b: 0, a: 1}
   color2: {r: 1, g: 0, b: 0.035839558, a: 1}
   color3: {r: 0, g: 0.35364532, b: 1, a: 1}
@@ -6481,6 +6417,7 @@ MonoBehaviour:
   colorButton1: {fileID: 492698044}
   colorButton2: {fileID: 369480448}
   colorButton3: {fileID: 1107464673}
+  wallPaintPercentageText: {fileID: 1882615707}
 --- !u!4 &1852932816
 Transform:
   m_ObjectHideFlags: 0
@@ -6494,7 +6431,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1352502646}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1871929147
 PrefabInstance:
@@ -7734,10 +7671,6 @@ PrefabInstance:
     - target: {fileID: 437232457260651385, guid: 9d256c8bb7048ad46be57ca8a7385561, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 437232457260651388, guid: 9d256c8bb7048ad46be57ca8a7385561, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 437232457260651389, guid: 9d256c8bb7048ad46be57ca8a7385561, type: 3}
       propertyPath: m_Pivot.x

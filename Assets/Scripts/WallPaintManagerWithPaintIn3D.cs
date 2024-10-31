@@ -2,12 +2,13 @@ using PaintCore;
 using UnityEngine;
 using UnityEngine.UI;
 using PaintIn3D;
+using TMPro;
 using UnityEngine.Serialization;
 
 public class WallPaintManagerWithPaintIn3D : MonoBehaviour
 {
 	public CwPaintSphere cwPaintSphere;
-	public CwChannelCounterText cwChannelCounterText;
+	
 	public Color color1 = Color.yellow; 
 	public Color color2 = Color.red; 
 	public Color color3 = Color.blue; 
@@ -16,7 +17,9 @@ public class WallPaintManagerWithPaintIn3D : MonoBehaviour
 	public Button colorButton1;
 	public Button colorButton2;
 	public Button colorButton3;
-	
+	public TextMeshProUGUI wallPaintPercentageText;
+
+	private bool _isPaintDone;
 	private void Start()
 	{
 		cwPaintSphere.Scale = new Vector3(brushSizeSlider.value,brushSizeSlider.value,brushSizeSlider.value);
@@ -38,15 +41,11 @@ public class WallPaintManagerWithPaintIn3D : MonoBehaviour
 	private void Update()
 	{
 		UpdateBrushSize();
+		if (wallPaintPercentageText.text == 100.ToString() + "%" && !_isPaintDone)
+		{
+			EventBus<WallPaintFinishEvent>.Emit(this,new WallPaintFinishEvent());
+			_isPaintDone = true;
+		}
 	}
-	
-	//
-	// private void UpdatePercentageText()
-	// {
-	// 	float paintedArea = paintIn3D.GetPaintedArea(); 
-	// 	float totalArea = paintIn3D.GetTotalArea(); 
-	// 	float percentage = (paintedArea / totalArea) * 100; 
-	// 	percentageText.text = $"{percentage:F2}% boyandı"; 
-	// }
 }
 

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class JoystickPlayerController : MonoBehaviour
@@ -13,6 +14,21 @@ public class JoystickPlayerController : MonoBehaviour
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+    }
+
+    private void OnEnable()
+    {
+        EventBus<PlayerReachedFinishEvent>.AddListener(OnPlayerReachedFinish);
+    }
+
+    private void OnDisable()
+    {
+        EventBus<PlayerReachedFinishEvent>.RemoveListener(OnPlayerReachedFinish);
+    }
+
+    private void OnPlayerReachedFinish(object sender, PlayerReachedFinishEvent @event)
+    {
+        enabled = false;
     }
 
     void FixedUpdate()
