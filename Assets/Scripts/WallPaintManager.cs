@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -23,7 +24,7 @@ public class WallPaintManager : MonoBehaviour
     private Renderer wallRenderer;
     private float totalPixels;
     private float paintedPixels;
-
+    private bool _canPaint = true;
     void Start()
     {
         if (wallObject != null)
@@ -51,21 +52,23 @@ public class WallPaintManager : MonoBehaviour
         brushSizeSlider.maxValue = maxBrushSize;
         brushSizeSlider.onValueChanged.AddListener(SetBrushSize);
     }
-
+    
     void Update()
     {
-        if (Input.GetMouseButton(0) && wallObject != null)
+        if (_canPaint)
         {
-            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == wallObject)
+            if (Input.GetMouseButton(0) && wallObject != null)
             {
-                Vector2 uv = hit.textureCoord;
-                PaintOnWall(uv);
+                Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == wallObject)
+                {
+                    Vector2 uv = hit.textureCoord;
+                    PaintOnWall(uv);
+                }
             }
         }
-
         //UpdatePercentageText();
     }
 
@@ -108,8 +111,14 @@ public class WallPaintManager : MonoBehaviour
     {
         if (percentageText != null)
         {
-            float percentage = (paintedPixels / totalPixels / 6.5f) * 100f;
+            float percentage = (paintedPixels / totalPixels / 6f) * 100f;
             percentageText.text = $"{Mathf.Clamp(percentage, 0f, 100f):F2}%";
+
+            if (percentage >= 100)
+            {
+                EventBus<WallPaintFinishEvent>.Emit(this,new WallPaintFinishEvent());
+                _canPaint = false;
+            }
         }
     }
 

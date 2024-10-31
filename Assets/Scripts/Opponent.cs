@@ -82,7 +82,10 @@ public class Opponent : MonoBehaviour
 	void Respawn()
 	{
 		transform.position = _startPosition;
-		_agent.SetDestination(_finishLineTransform.position);
+		if (_agent.isActiveAndEnabled)
+		{
+			_agent.SetDestination(_finishLineTransform.position);
+		}
 	}
 
 	public void ApplyHorizontalForce(float pushForce)
