@@ -112,3 +112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 100
   isRotatingTowardsRight: 1
+  pushForce: 4
+  minXPosition: -4
+  maxXPosition: 4
