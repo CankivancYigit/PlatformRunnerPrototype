@@ -7,9 +7,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Vector3 _startPos;
-    
+    private Rigidbody _rigidbody;
     private void Start()
     {
+        _rigidbody = GetComponent<Rigidbody>();
         _startPos = transform.position;
     }
     
@@ -53,6 +54,11 @@ public class Player : MonoBehaviour
             EventBus<PlayerReachedWallPaintingPosEvent>.Emit(this,new PlayerReachedWallPaintingPosEvent());
         });
     }
-    
-   
+
+
+    public void ApplyHorizontalForce(float pushForce)
+    {
+        Vector3 pushDirection = transform.right * pushForce;
+        _rigidbody.AddForce(pushDirection * Time.fixedTime, ForceMode.Acceleration);
+    }
 }

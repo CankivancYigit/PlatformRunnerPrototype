@@ -12,11 +12,12 @@ public class Opponent : MonoBehaviour
 	private float _targetZPosition;
 	private NavMeshAgent _agent;
 	private Collider _collider;
-	
+	private Rigidbody _rigidbody;
 	private bool _isReachedFinish;
 	void Start()
 	{
 		_agent = GetComponent<NavMeshAgent>();
+		_rigidbody = GetComponent<Rigidbody>();
 		_collider = GetComponent<Collider>();
 		_agent.speed = 0;
 		_agent.stoppingDistance = 2;
@@ -68,5 +69,11 @@ public class Opponent : MonoBehaviour
 	{
 		transform.position = _startPosition;
 		_agent.SetDestination(_finishLineTransform.position);
+	}
+
+	public void ApplyHorizontalForce(float pushForce)
+	{
+		Vector3 pushDirection = transform.right * pushForce;
+		_rigidbody.AddForce(pushDirection, ForceMode.Acceleration);
 	}
 }

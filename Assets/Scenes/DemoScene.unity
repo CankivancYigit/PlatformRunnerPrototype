@@ -1197,6 +1197,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4628478050401271182, guid: fa697d7a6f13c434ca3f659e4aabad78, type: 3}
+      propertyPath: pushForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5429537978636413984, guid: fa697d7a6f13c434ca3f659e4aabad78, type: 3}
       propertyPath: m_Name
       value: Rotating Platform 3
@@ -6810,6 +6814,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7522292088163933704, guid: ed3f32efed3fafc4e937f1fcd24447cf, type: 3}
+      propertyPath: pushForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4616832466574767770, guid: ed3f32efed3fafc4e937f1fcd24447cf, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -7660,6 +7668,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2431152631762100370, guid: a97fb4bd7d58968489f972c77f69d69f, type: 3}
+      propertyPath: pushForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4616832466574767770, guid: a97fb4bd7d58968489f972c77f69d69f, type: 3}
       propertyPath: m_RootOrder
       value: 3
