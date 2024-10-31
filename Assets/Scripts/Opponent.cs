@@ -6,6 +6,7 @@ using UnityEngine.Serialization;
 public class Opponent : MonoBehaviour
 {
 	public float runningSpeed = 6f;
+	public GameObject nameDisplayer;
 	
 	private Transform _finishLineTransform;
 	private Vector3 _startPosition;
@@ -19,8 +20,11 @@ public class Opponent : MonoBehaviour
 		_agent = GetComponent<NavMeshAgent>();
 		_rigidbody = GetComponent<Rigidbody>();
 		_collider = GetComponent<Collider>();
+		
+		nameDisplayer.SetActive(false);
 		_agent.speed = 0;
 		_agent.stoppingDistance = 2;
+		
 		_finishLineTransform = FinishLine.Instance.opponentFinishTransform;
 		_startPosition = transform.position;
 		_targetZPosition = _finishLineTransform.position.z;
@@ -35,11 +39,19 @@ public class Opponent : MonoBehaviour
 	private void OnEnable()
 	{
 		EventBus<LevelStartEvent>.AddListener(OnLevelStart);
+		EventBus<PlayerReachedFinishEvent>.AddListener(OnPlayerReachFinish);
 	}
 
 	private void OnDisable()
 	{
 		EventBus<LevelStartEvent>.RemoveListener(OnLevelStart);
+		EventBus<PlayerReachedFinishEvent>.RemoveListener(OnPlayerReachFinish);
+	}
+
+	private void OnPlayerReachFinish(object sender, PlayerReachedFinishEvent @event)
+	{
+		_agent.enabled = false;
+		nameDisplayer.SetActive(false);
 	}
 
 	private void Update()
@@ -55,13 +67,15 @@ public class Opponent : MonoBehaviour
 	private void OnLevelStart(object sender, LevelStartEvent @event)
 	{
 		_agent.speed = runningSpeed;
+		nameDisplayer.SetActive(true);
 	}
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.TryGetComponent<ICollideable>(out var collideable))
+		if (other.TryGetComponent(out ICollideable collideable))
 		{
 			Respawn();
+			collideable.OnCollide();
 		}
 	}
 

@@ -10,12 +10,19 @@ public class OpponentAnimationController : MonoBehaviour
     {
         EventBus<LevelStartEvent>.AddListener(TransitionToRunning);
         EventBus<OpponentReachedFinishEvent>.AddListener(OnFinishReach);
+        EventBus<PlayerReachedFinishEvent>.AddListener(OnPlayerReachFinish);
     }
 
     private void OnDisable()
     {
         EventBus<LevelStartEvent>.RemoveListener(TransitionToRunning);
         EventBus<OpponentReachedFinishEvent>.RemoveListener(OnFinishReach);
+        EventBus<PlayerReachedFinishEvent>.RemoveListener(OnPlayerReachFinish);
+    }
+
+    private void OnPlayerReachFinish(object sender, PlayerReachedFinishEvent @event)
+    {
+        SetBoolParameter("isRunning",false);
     }
 
     private void OnFinishReach(object sender, OpponentReachedFinishEvent @event)

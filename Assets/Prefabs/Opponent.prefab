@@ -894,8 +894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runningSpeed: 9
-  finishLine: {fileID: 0}
-  respawnDelay: 2
+  nameDisplayer: {fileID: 3253268153091743610}
 --- !u!195 &838725605
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1181,6 +1180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2035dc9acecad874082feb9037ca4ac9, type: 3}
+--- !u!1 &3253268153091743610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2589459358008971973, guid: 2035dc9acecad874082feb9037ca4ac9, type: 3}
+  m_PrefabInstance: {fileID: 1065793691109576127}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &3253268153091743611 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2589459358008971972, guid: 2035dc9acecad874082feb9037ca4ac9, type: 3}
