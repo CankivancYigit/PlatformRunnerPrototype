@@ -893,7 +893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0efad315a68fe142bd6b1bc8944b7fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runningSpeed: 6
+  runningSpeed: 8
   finishLine: {fileID: 0}
   respawnDelay: 2
 --- !u!195 &838725605

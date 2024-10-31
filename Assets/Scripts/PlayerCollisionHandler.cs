@@ -45,9 +45,19 @@ public class PlayerCollisionHandler : MonoBehaviour
             {
                 _rigidbody.AddForce(Vector3.left * (rotatingPlatform.rotationSpeed / 10) * Time.fixedTime);
             }
+
+
+            ClampOnRotatingPlatform();
         }
     }
-    
+
+    private void ClampOnRotatingPlatform()
+    {
+        Vector3 clampedPosition = _rigidbody.position;
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -4, 4);
+        _rigidbody.position = clampedPosition;
+    }
+
     private void KnockBack()
     {
         transform.DOMoveZ(transform.position.z - 4, .5f).SetEase(Ease.OutQuad).OnComplete(delegate
