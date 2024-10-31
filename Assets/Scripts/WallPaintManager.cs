@@ -20,28 +20,28 @@ public class WallPaintManager : MonoBehaviour
     public Slider brushSizeSlider;
     public TextMeshProUGUI percentageText;
 
-    private Texture2D texture;
-    private Renderer wallRenderer;
-    private float totalPixels;
-    private float paintedPixels;
+    private Texture2D _texture;
+    private Renderer _wallRenderer;
+    private float _totalPixels;
+    private float _paintedPixels;
     private bool _canPaint = true;
     void Start()
     {
         if (wallObject != null)
         {
-            wallRenderer = wallObject.GetComponent<Renderer>();
+            _wallRenderer = wallObject.GetComponent<Renderer>();
 
-            if (wallRenderer.material.mainTexture == null)
+            if (_wallRenderer.material.mainTexture == null)
             {
-                texture = new Texture2D(1024, 1024);
-                wallRenderer.material.mainTexture = texture;
+                _texture = new Texture2D(1024, 1024);
+                _wallRenderer.material.mainTexture = _texture;
             }
             else
             {
-                texture = (Texture2D)wallRenderer.material.mainTexture;
+                _texture = (Texture2D)_wallRenderer.material.mainTexture;
             }
 
-            totalPixels = texture.width * texture.height;
+            _totalPixels = _texture.width * _texture.height;
         }
 
         colorButton1.onClick.AddListener(() => SetPaintColor(color1));
@@ -74,23 +74,23 @@ public class WallPaintManager : MonoBehaviour
 
     void PaintOnWall(Vector2 uv)
     {
-        int x = (int)(uv.x * texture.width);
-        int y = (int)(uv.y * texture.height);
-        int brushPixelSize = Mathf.FloorToInt(brushSize * texture.width);
+        int x = (int)(uv.x * _texture.width);
+        int y = (int)(uv.y * _texture.height);
+        int brushPixelSize = Mathf.FloorToInt(brushSize * _texture.width);
         bool isPainted = false;
 
         for (int i = -brushPixelSize; i < brushPixelSize; i++)
         {
             for (int j = -brushPixelSize; j < brushPixelSize; j++)
             {
-                if (x + i >= 0 && x + i < texture.width && y + j >= 0 && y + j < texture.height)
+                if (x + i >= 0 && x + i < _texture.width && y + j >= 0 && y + j < _texture.height)
                 {
-                    Color currentColor = texture.GetPixel(x + i, y + j);
+                    Color currentColor = _texture.GetPixel(x + i, y + j);
                 
                     // Eğer mevcut piksel boyanmamışsa
                     if (currentColor != paintColor && currentColor != color1 && currentColor != color2 && currentColor != color3)
                     {
-                        texture.SetPixel(x + i, y + j, paintColor);
+                        _texture.SetPixel(x + i, y + j, paintColor);
                         isPainted = true;
                     }
                 }
@@ -99,11 +99,11 @@ public class WallPaintManager : MonoBehaviour
 
         if (isPainted)
         {
-            paintedPixels += Mathf.Pow(brushPixelSize * 2, 2);
+            _paintedPixels += Mathf.Pow(brushPixelSize * 2, 2);
             UpdatePercentageText();
         }
 
-        texture.Apply();
+        _texture.Apply();
     }
 
     
@@ -111,7 +111,7 @@ public class WallPaintManager : MonoBehaviour
     {
         if (percentageText != null)
         {
-            float percentage = (paintedPixels / totalPixels / 6f) * 100f;
+            float percentage = (_paintedPixels / _totalPixels / 6f) * 100f;
             percentageText.text = $"{Mathf.Clamp(percentage, 0f, 100f):F2}%";
 
             if (percentage >= 100)
