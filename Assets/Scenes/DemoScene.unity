@@ -847,11 +847,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1668507443854459296, guid: 27582aa75cdc79e47882758815e83a8a, type: 3}
   m_PrefabInstance: {fileID: 266834597}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &271817712 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 437232455908769881, guid: 9d256c8bb7048ad46be57ca8a7385561, type: 3}
-  m_PrefabInstance: {fileID: 437232456710533056}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &273115009 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5918287019933751209, guid: 3c67fd27c0809b6489010acca2b42f52, type: 3}
@@ -6509,44 +6504,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 437232455908769883, guid: 9d256c8bb7048ad46be57ca8a7385561, type: 3}
   m_PrefabInstance: {fileID: 437232456710533056}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271817712}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1882615710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271817712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e76845ae3a2deec40858e278575ab4ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  counters: []
-  channel: 3
-  inverse: 0
-  decimalPlaces: 0
-  format: '{PERCENT}%'
-  onString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1882615707}
-        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &1911294200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7664,10 +7627,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 437232456345094434, guid: 9d256c8bb7048ad46be57ca8a7385561, type: 3}
-      propertyPath: m_MaxValue
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 437232457260651385, guid: 9d256c8bb7048ad46be57ca8a7385561, type: 3}
       propertyPath: m_Name
       value: Canvas
