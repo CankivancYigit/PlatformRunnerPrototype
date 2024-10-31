@@ -9,13 +9,23 @@ public class OpponentAnimationController : MonoBehaviour
     private void OnEnable()
     {
         EventBus<LevelStartEvent>.AddListener(TransitionToRunning);
+        EventBus<OpponentReachedFinishEvent>.AddListener(OnFinishReach);
     }
 
     private void OnDisable()
     {
         EventBus<LevelStartEvent>.RemoveListener(TransitionToRunning);
+        EventBus<OpponentReachedFinishEvent>.RemoveListener(OnFinishReach);
     }
-    
+
+    private void OnFinishReach(object sender, OpponentReachedFinishEvent @event)
+    {
+        if (GetComponent<Opponent>() == @event.Opponent) //Eğer Eventi yollayan ve dinleyen Opponent eşleşiyorsa
+        {
+            SetBoolParameter("isRunning",false);
+        }
+    }
+
     private void TransitionToRunning(object sender, LevelStartEvent e)
     {
         SetBoolParameter("isRunning",true);

@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     private void MovePlayerToWallPaintingPosition( PlayerReachedFinishEvent @event)
     {
         float speed = PlayerMoveForward.Instance.moveSpeed;
-        Transform targetTransform = @event._wallPaintTransform;
+        Transform targetTransform = @event.WallPaintTransform;
         
         float duration = Vector3.Distance(transform.position, targetTransform.position) / speed;
 

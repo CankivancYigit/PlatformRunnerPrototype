@@ -1,24 +1,25 @@
 using System;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 
 public class Opponent : MonoBehaviour
 {
 	public float runningSpeed = 6f;
 	public Transform finishLine;
 	public float respawnDelay = 2f;
-	private Vector3 startPosition;
-	private NavMeshAgent agent;
-
+	private Vector3 _startPosition;
+	private NavMeshAgent _agent;
+	private bool _isReachedFinish;
 	void Start()
 	{
-		agent = GetComponent<NavMeshAgent>();
-		agent.speed = 0;
-		startPosition = transform.position;
+		_agent = GetComponent<NavMeshAgent>();
+		_agent.speed = 0;
+		_startPosition = transform.position;
         
 		if (finishLine != null)
 		{
-			agent.SetDestination(finishLine.position);
+			_agent.SetDestination(finishLine.position);
 		}
 	}
 
@@ -32,9 +33,18 @@ public class Opponent : MonoBehaviour
 		EventBus<LevelStartEvent>.RemoveListener(OnLevelStart);
 	}
 
+	private void Update()
+	{
+		if (_agent.remainingDistance <= _agent.stoppingDistance && !_isReachedFinish)
+		{
+			EventBus<OpponentReachedFinishEvent>.Emit(this,new OpponentReachedFinishEvent(this));
+			_isReachedFinish = true;
+		}
+	}
+
 	private void OnLevelStart(object sender, LevelStartEvent @event)
 	{
-		agent.speed = runningSpeed;
+		_agent.speed = runningSpeed;
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -47,7 +57,7 @@ public class Opponent : MonoBehaviour
 
 	void Respawn()
 	{
-		transform.position = startPosition;
-		agent.SetDestination(finishLine.position);
+		transform.position = _startPosition;
+		_agent.SetDestination(finishLine.position);
 	}
 }
