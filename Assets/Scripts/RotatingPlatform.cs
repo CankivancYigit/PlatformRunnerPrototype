@@ -34,7 +34,7 @@ public class RotatingPlatform : MonoBehaviour
         {
             float direction = isRotatingTowardsRight ? 1f : -1f;
             
-            opponent.ApplyHorizontalForce(direction * pushForce);
+            opponent.ApplyHorizontalForce(direction * pushForce * 1.5f);
             ClampPosition(opponent.transform);
         }
     }
