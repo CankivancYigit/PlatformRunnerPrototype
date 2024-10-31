@@ -33,6 +33,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.generic.finitestatemachine@df1798d75d/Runtime/State.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.generic.finitestatemachine@df1798d75d/Runtime/StateMachine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TextMeshPro.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../State Machine/Assets/Scripts/StateManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/4fbdb3c610974c1ea0e8cfc305e88e101200/0b/4ec5219c/02000003pdb2.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e1d281a3e6bc48c38fcb65161663eebf27000/b6/6b498a40/Animator.cs" root0="SKIP_HIGHLIGHTING" />

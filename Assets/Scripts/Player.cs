@@ -8,27 +8,37 @@ public class Player : MonoBehaviour
 {
     private Vector3 _startPos;
     private Rigidbody _rigidbody;
+    private Collider _collider;
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _collider = GetComponent<Collider>();
         _startPos = transform.position;
     }
     
     private void OnEnable()
     {
         EventBus<PlayerReachedFinishEvent>.AddListener(OnPlayerReachedFinish);
+        EventBus<PlayerCollidedEvent>.AddListener(OnPlayerCollide);
         EventBus<PlayerKnockBackHappenedEvent>.AddListener(OnKnockBackHappened);
     }
     
     private void OnDisable()
     {
         EventBus<PlayerReachedFinishEvent>.RemoveListener(OnPlayerReachedFinish);
+        EventBus<PlayerCollidedEvent>.RemoveListener(OnPlayerCollide);
         EventBus<PlayerKnockBackHappenedEvent>.RemoveListener(OnKnockBackHappened);
+    }
+
+    private void OnPlayerCollide(object sender, PlayerCollidedEvent @event)
+    {
+        _collider.enabled = false;
     }
 
     private void OnKnockBackHappened(object sender, PlayerKnockBackHappenedEvent @event)
     {
         ResetPositionToStart();
+        _collider.enabled = true;
     }
     
     private void OnPlayerReachedFinish(object sender, PlayerReachedFinishEvent @event)
