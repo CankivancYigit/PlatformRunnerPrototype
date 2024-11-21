@@ -3,16 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
+    public float HorizontalInput { get; set; }
+    public Rigidbody playerRigidbody;
+    public Collider playerCollider;
+    
     private Vector3 _startPos;
-    private Rigidbody _rigidbody;
-    private Collider _collider;
     private void Start()
     {
-        _rigidbody = GetComponent<Rigidbody>();
-        _collider = GetComponent<Collider>();
+        playerRigidbody = GetComponent<Rigidbody>();
+        playerCollider = GetComponent<Collider>();
         _startPos = transform.position;
     }
     
@@ -32,13 +35,13 @@ public class Player : MonoBehaviour
 
     private void OnPlayerCollide(object sender, PlayerCollidedEvent @event)
     {
-        _collider.enabled = false;
+        playerCollider.enabled = false;
     }
 
     private void OnKnockBackHappened(object sender, PlayerKnockBackHappenedEvent @event)
     {
         ResetPositionToStart();
-        _collider.enabled = true;
+        playerCollider.enabled = true;
     }
     
     private void OnPlayerReachedFinish(object sender, PlayerReachedFinishEvent @event)
@@ -69,6 +72,6 @@ public class Player : MonoBehaviour
     public void ApplyHorizontalForce(float pushForce)
     {
         Vector3 pushDirection = transform.right * pushForce;
-        _rigidbody.AddForce(pushDirection * Time.fixedTime, ForceMode.Acceleration);
+        playerRigidbody.AddForce(pushDirection);
     }
 }

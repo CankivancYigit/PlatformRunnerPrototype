@@ -4,11 +4,11 @@ public class PlayerMoveForward : SingletonBase<PlayerMoveForward>
 {
     public float moveSpeed = 5.0f;
     private float _currentSpeed;
-    private Rigidbody _rigidbody;
+    private Player _player;
 
     private void Start()
     {
-        _rigidbody = GetComponent<Rigidbody>();
+        _player = GetComponent<Player>();
         _currentSpeed = 0;
     }
     
@@ -50,6 +50,6 @@ public class PlayerMoveForward : SingletonBase<PlayerMoveForward>
     
     void Update()
     {
-        _rigidbody.velocity = Vector3.forward * _currentSpeed;
+        _player.playerRigidbody.velocity = Vector3.forward * _currentSpeed;
     }
 }

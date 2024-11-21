@@ -91,6 +91,6 @@ public class Opponent : MonoBehaviour
 	public void ApplyHorizontalForce(float pushForce)
 	{
 		Vector3 pushDirection = transform.right * pushForce;
-		_rigidbody.AddForce(pushDirection, ForceMode.Acceleration);
+		_rigidbody.AddForce(pushDirection);
 	}
 }

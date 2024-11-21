@@ -26,7 +26,7 @@ public class RotatingPlatform : MonoBehaviour
         {
             float direction = isRotatingTowardsRight ? 1f : -1f;
             
-            player.ApplyHorizontalForce(direction * pushForce);
+            player.ApplyHorizontalForce(direction * pushForce * 30);//Hardcoded çarpım nedeni player ve opponent'a uygulanacak force'u manuel balanslamak
             ClampPosition(player.transform);
         }
         
@@ -34,7 +34,7 @@ public class RotatingPlatform : MonoBehaviour
         {
             float direction = isRotatingTowardsRight ? 1f : -1f;
             
-            opponent.ApplyHorizontalForce(direction * pushForce * 1.5f);
+            opponent.ApplyHorizontalForce(direction * pushForce);
             ClampPosition(opponent.transform);
         }
     }

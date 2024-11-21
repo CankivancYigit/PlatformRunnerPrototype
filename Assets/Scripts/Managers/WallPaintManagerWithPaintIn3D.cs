@@ -41,7 +41,7 @@ public class WallPaintManagerWithPaintIn3D : MonoBehaviour
 	private void Update()
 	{
 		UpdateBrushSize();
-		if (wallPaintPercentageText.text == 100.ToString() + "%" && !_isPaintDone)
+		if (wallPaintPercentageText.text == 99 + "%" && !_isPaintDone)
 		{
 			EventBus<WallPaintFinishEvent>.Emit(this,new WallPaintFinishEvent());
 			_isPaintDone = true;

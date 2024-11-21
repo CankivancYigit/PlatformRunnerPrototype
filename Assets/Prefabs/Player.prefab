@@ -215,6 +215,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de617038b3aaa0b4088ca8f6be3dbe10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
+  startPos: {x: 0, y: 0, z: 0}
+  playerRigidbody: {fileID: 3487166282895885487}
+  playerCollider: {fileID: 819808648515085991}
 --- !u!114 &7401540796662005003
 MonoBehaviour:
   m_ObjectHideFlags: 0
